@@ -35,6 +35,7 @@ html, body {
     height: 100%;
     background-color: black;
     font-family: 'Figtree', sans-serif;
+    color: white;
 }
 
 header {
@@ -95,7 +96,6 @@ main {
 
 .headlineOne {
     font-size: 56px;
-    color: white;
 }
 
 .fotogram_content {
