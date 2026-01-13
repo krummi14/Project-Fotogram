@@ -1,36 +1,58 @@
-<div align="center">
-#Fotgram
+<h1 align="center">Fotgram</h1>
 
-A small, self‑built photo album project created with HTML, CSS, and JavaScript.
-It serves as a simple gallery to display images in a clean and visually appealing way.
+<p>
+    A small, self‑built photo album project created with 
+    <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>.<br>
+    It serves as a simple gallery to display images in a clean and visually appealing way.
+</p>
 
-##Project Overview
+<h2 align="center">Project Overview</h2>
 
-The photo album provides a clear structure, basic navigation, and an attractive layout for showcasing images.
-It can be used as a starter project or as a foundation for your own extensions.
+<p>
+    The photo album provides a clear structure, basic navigation, and an attractive layout 
+    for showcasing images. It can be used as a starter project or as a foundation for your 
+    own extensions.
+</p>
 
-##Installation & Usage
+<h2 align="center">Installation & Usage</h2>
 
-To run the project locally, you must download all files — not just the code.
-This includes:
-- the img folder (all images)
-- the font folder (required fonts)
-- all HTML, CSS, and JavaScript files
+<p>
+    To run the project locally, you must download <strong>all files</strong> — 
+    not just the code. This includes:
+</p>
 
-##Steps
+<ul>
+    <li>the <code>img</code> folder (all images)</li>
+    <li>the <code>font</code> folder (required fonts)</li>
+    <li>all HTML, CSS, and JavaScript files</li>
+</ul>
 
-- Download or clone the repository:
-git clone <repository-url>
-- Make sure the img/ and font/ folders are included.
-- Open the index.html file in your browser.
+<h3 align="center">Steps</h3>
 
-##Technologies
+<ol>
+    <li>Download or clone the repository:</li>
+</ol>
 
-- HTML5
-- CSS3
-- JavaScript
+<pre>
+<code>git clone &lt;repository-url&gt;</code>
+</pre>
 
-##License
+<ol start="2">
+    <li>Make sure the <code>img/</code> and <code>font/</code> folders are included.</li>
+    <li>Open the <code>index.html</code> file in your browser.</li>
+</ol>
 
-This project may be used and modified freely unless otherwise stated in the repository
-</div>
+<h2 align="center">Technologies</h2>
+
+<ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>JavaScript</li>
+</ul>
+
+<h2 align="center">License</h2>
+
+<p>
+    This project may be used and modified freely unless otherwise stated in the repository.
+</p>
+
