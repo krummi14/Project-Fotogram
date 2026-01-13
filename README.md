@@ -1,4 +1,5 @@
-<h1 align="center">Fotgram</h1>
+<img src="img/logo.svg" alt="fotogram-logo" width="120px" height="120px"/>
+<h1>Fotogram</h1>
 
 <p>
     A small, self‑built photo album project created with 
@@ -6,7 +7,7 @@
     It serves as a simple gallery to display images in a clean and visually appealing way.
 </p>
 
-<h2 align="center">Project Overview</h2>
+<h2>Project Overview</h2>
 
 <p>
     The photo album provides a clear structure, basic navigation, and an attractive layout 
@@ -14,7 +15,7 @@
     own extensions.
 </p>
 
-<h2 align="center">Installation & Usage</h2>
+<h2>Installation & Usage</h2>
 
 <p>
     To run the project locally, you must download <strong>all files</strong> — 
@@ -27,7 +28,7 @@
     <li>all HTML, CSS, and JavaScript files</li>
 </ul>
 
-<h3 align="center">Steps</h3>
+<h3">Steps</h3>
 
 <ol>
     <li>Download or clone the repository:</li>
@@ -42,7 +43,7 @@
     <li>Open the <code>index.html</code> file in your browser.</li>
 </ol>
 
-<h2 align="center">Technologies</h2>
+<h2>Technologies</h2>
 
 <ul>
     <li>HTML5</li>
