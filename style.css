@@ -1,6 +1,40 @@
-/* general style of html, header, body and footer*/
+/* font of website*/
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('./font/300/Figtree-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('./font/400/Figtree-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('./font/700/Figtree-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* general style of html, body, header, main and footer*/
 * {
     margin: 0;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: black;
+    font-family: 'Figtree', sans-serif;
 }
 
 header {
@@ -9,7 +43,7 @@ header {
     align-items: center;
     background-color: rgba(9, 33, 42, 1);
     height: 120px;
-    padding: 0 120px;
+    padding: 0 80px;
 }
 
 footer {
@@ -18,16 +52,16 @@ footer {
     align-items: center;
     background-color: rgba(9, 33, 42, 1);
     height: 120px;
-    padding: 0 120px;
+    padding: 0 80px;
+    border-top-left-radius: 50% 25%;
+    border-top-right-radius: 50% 25%;
 }
 
 main {
-    height: 100vh; /*height: 100vh has to delet if main tag includes content*/
     flex-grow: 1;
 }
 
-
-/* style of classes which are included in header*/
+/* style of classes which are included only in header*/
 
 .header_maxWidth {
     max-width: 1440px;
@@ -42,7 +76,7 @@ main {
     width: 200px;
 }
 
-/* style of classes which are included in footer*/
+/* style of classes which are included only in footer*/
 
 .footer_maxWidth {
     max-width: 1440px;
@@ -55,4 +89,18 @@ main {
 
 .footer_logo {
     width: 200px;
+}
+
+/* style of classes which are included only in main*/
+
+.headlineOne {
+    font-size: 56px;
+    color: white;
+}
+
+.fotogram_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0;
 }
