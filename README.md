@@ -49,10 +49,3 @@
     <li>CSS3</li>
     <li>JavaScript</li>
 </ul>
-
-<h2 align="center">License</h2>
-
-<p>
-    This project may be used and modified freely unless otherwise stated in the repository.
-</p>
-
