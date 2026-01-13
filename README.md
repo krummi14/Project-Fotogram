@@ -1,5 +1,7 @@
-<img src="img/logo.svg" alt="fotogram-logo" width="120px" height="120px"/>
+<div>
+<img src="img/logo.svg" alt="fotogram-logo" width="200px"/>
 <h1>Fotogram</h1>
+</div>
 
 <p>
     A small, self‑built photo album project created with 
