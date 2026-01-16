@@ -19,47 +19,77 @@
     </header>
     <main>
         <section class="fotogram_content">
-            <h1 class="headlineOne">My personal photo album</h1>
+            <h1 class="headline_one">My personal photo album</h1>
             <div id="gallery">
                 <div class="padding_gallery">
-                    <button class="img_button" onclick="openDialog()">
+                    <button class="img_button" onclick="openDialog(0)">
                         <img class="img_size" src="./img/beach-1790701_1280.jpg" alt="beach of vietnam">
                     </button>
-
-                    <img class="img_size" src="./img/boy-6559419_1280.jpg" alt="vietnamese boy">
-                    <img class="img_size" src="./img/hoi-an-7501885_1280.jpg" alt="vietnam hoi an">
-                    <img class="img_size" src="./img/landscape-5104510_1280.jpg" alt="vietnam landscape">
-                    <img class="img_size" src="./img/market-2494520_1280.jpg" alt="vietnam market">
-                    <img class="img_size" src="./img/mountains-4484190_1280.jpg"
-                        alt="landscape with mountains in vietnam">
-                    <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
+                    <button class="img_button" onclick="openDialog(1)">
+                        <img class="img_size" src="./img/boy-6559419_1280.jpg" alt="vietnamese boy">
+                    </button>
+                    <button class="img_button" onclick="openDialog(2)">
+                        <img class="img_size" src="./img/hoi-an-7501885_1280.jpg" alt="vietnam hoi an">
+                    </button>
+                    <button class="img_button" onclick="openDialog(3)">
+                        <img class="img_size" src="./img/landscape-5104510_1280.jpg" alt="landscape of vietnam">
+                    </button>
+                    <button class="img_button" onclick="openDialog(4)">
+                        <img class="img_size" src="./img/market-2494520_1280.jpg" alt="vietnam market">
+                    </button>
+                    <button class="img_button" onclick="openDialog(5)">
+                        <img class="img_size" src="./img/mountains-4484190_1280.jpg"
+                            alt="landscape with mountains in vietnam">
+                    </button>
+                    <button class="img_button" onclick="openDialog(6)">
+                        <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
+                    </button>
                 </div>
                 <span>
-                    <img class="img_size" src="./img/river-8105970_1280.jpg" alt="vietnam river">
-                    <img class="img_size" src="./img/pine-7171768_1280.jpg" alt="vietnam forest">
-                    <img class="img_size" src="./img/sea-4168234_1280.jpg" alt="sea of vietnam">
-                    <img class="img_size" src="./img/street-vendor-4176310_1280.jpg" alt="streets of vietnam">
-                    <img class="img_size" src="./img/tea-9800900_1280.jpg" alt="vietnam tea plantation">
+                    <button class="img_button" onclick="openDialog(7)">
+                        <img class="img_size" src="./img/river-8105970_1280.jpg" alt="vietnam river">
+                    </button>
+                    <button class="img_button" onclick="openDialog(8)">
+                        <img class="img_size" src="./img/pine-7171768_1280.jpg" alt="vietnam forest">
+                    </button>
+                    <button class="img_button" onclick="openDialog(9)">
+                        <img class="img_size" src="./img/sea-4168234_1280.jpg" alt="sea of vietnam">
+                    </button>
+                    <button class="img_button" onclick="openDialog(10)">
+                        <img class="img_size" src="./img/street-vendor-4176310_1280.jpg" alt="streets of vietnam">
+                    </button>
+                    <button class="img_button" onclick="openDialog(11)">
+                        <img class="img_size" src="./img/tea-9800900_1280.jpg" alt="vietnam tea plantation">
+                    </button>
                 </span>
             </div>
         </section>
 
-        <dialog id="dialog_content">
-            <header>
-                <div id="img_titel"></div>
-                <button onclick="closeDialog()">Close</button>
-            </header>
-            <section>
-                <div id="dialog_img"></div>
-            </section>
-            <footer>
-
-            </footer>
-        </dialog>
+        <section>
+            <dialog class="dialog_img_titel_content" id="dialog_content">
+                <header class="dialog_header">
+                    <div id="img_titel"></div>
+                    <button class="close_button_dialog" onclick="closeDialog()">x</button>
+                </header>
+                <section class="img_section">
+                    <div id="dialog_img"></div>
+                </section>
+                <footer class="dialog_footer">
+                    <span class="dialog_footer_content">
+                        <button class="button_next_img button_mirror">
+                            <img src="./img/Arrow-Right.svg" alt="switch to next img">
+                        </button>
+                        <p id="img_number">1/12</p>
+                        <button class="button_next_img"><img src="./img/Arrow-Right.svg" alt="switch to next img">
+                        </button>
+                    </span>
+                </footer>
+            </dialog>
+        </section>
 
 
     </main>
-    <footer>
+    <footer class="footer_brd_radius">
         <div class="footer_maxWidth">
             <img class="footer_logo" src="./img/da_logo.svg" alt="Logo of Developer Akademie">
         </div>
