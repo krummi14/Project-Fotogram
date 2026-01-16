@@ -6,8 +6,8 @@ let imgArray = ['./img/beach-1790701_1280.jpg',
     './img/market-2494520_1280.jpg',
     './img/mountains-4484190_1280.jpg',
     './img/pham-ngu-lao-3989110_1280.jpg',
-    './img/pine-7171768_1280.jpg',
     './img/river-8105970_1280.jpg',
+    './img/pine-7171768_1280.jpg',
     './img/sea-4168234_1280.jpg',
     './img/street-vendor-4176310_1280.jpg',
     './img/tea-9800900_1280.jpg'];
@@ -19,8 +19,8 @@ let imgTitle = ["beach-1790701_1280.jpg",
     'market-2494520_1280.jpg',
     'mountains-4484190_1280.jpg',
     'pham-ngu-lao-3989110_1280.jpg',
-    'pine-7171768_1280.jpg',
     'river-8105970_1280.jpg',
+    'pine-7171768_1280.jpg',
     'sea-4168234_1280.jpg',
     'street-vendor-4176310_1280.jpg',
     'tea-9800900_1280.jpg'];
@@ -41,20 +41,27 @@ let imgAlt = ['beach of vietnam',
 // variable of content in dialog header
 // variable of img content in dialog section
 // variable of all dialog content
+// variable index for filter current index
 let contentHeader = document.getElementById('img_titel');
 let contentSection = document.getElementById('dialog_img');
 let contentDialog = document.getElementById('dialog_content');
+let index = 0;
 
 // openDialog function:
 // open dialog by click on img (element one) at position null
 // add class dialog_opend
 // add <h2> and <img> with content
-function openDialog(openImg) {
+function openDialog() {
     contentDialog.showModal();
     contentDialog.classList.add("dialog_opend");
     contentDialog.classList.remove("dialog_closed");
-    contentHeader.innerHTML = `<h2 class="headline_two">${imgTitle[openImg]}</h2>`;
-    contentSection.innerHTML = `<img class="dialog_img" src="${imgArray[openImg]}" alt="${imgAlt[openImg]}">`;
+    getNoteTamplate(index);
+}
+
+// create content for HTML in <dialog> of selected Image
+function getNoteTamplate(currentImgIndex) {
+    contentHeader.innerHTML = `<h2 class="headline_two">${imgTitle[currentImgIndex]}</h2>`;
+    contentSection.innerHTML = `<img class="dialog_img" src="${imgArray[currentImgIndex]}" alt="${imgAlt[currentImgIndex]}">`;
 }
 
 // closeDialog
@@ -75,20 +82,25 @@ function closeDialog() {
     }, 750);
 }
 
+// identify currently index of function openDialog()
+function filterCurrentIndex(i) {
+    index = i;
+    openDialog();
+}
 
-// initalisation of function init() with loading body tag -> add elements into div container with id = photo_content
-function init() {
-    let contentRef = document.getElementById('img_titel');      // variable contentRef =id of div container
-    contentRef.innerHTML = "";                                      // before for loop empty content of div container
+// switch to next img and create these with associated img titel
+function createNextImg() {
+    index++;
 
-    for (let index = 0; index < imgTitle.length; index++) {       // for loop -> writes every element of array into div container
-        contentRef.innerHTML += imgTitle[index];
+    if (index >= imgArray.length) {
+        index = 0;
     }
+    getNoteTamplate(index);
 }
 
 
 // next steps:
-// include filter button (left or right)
+// include filter button (left or right)!!!
 // intigrate for loop to open random img and all element are correct!
 // ...
 
