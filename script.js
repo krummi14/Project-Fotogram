@@ -42,15 +42,19 @@ let imgAlt = ['beach of vietnam',
 // variable of img content in dialog section
 // variable of all dialog content
 // variable index for filter current index
+// variable of image numbering 
 let contentHeader = document.getElementById('img_titel');
 let contentSection = document.getElementById('dialog_img');
 let contentDialog = document.getElementById('dialog_content');
+let contentNumber = document.getElementById("img_numbering");
 let index = 0;
 
 // openDialog function:
 // open dialog by click on img (element one) at position null
 // add class dialog_opend
-// add <h2> and <img> with content
+// remove class dialog_closed
+// add <h2> and <img> of dialog with content (getNoteTemplate)
+// add content of <p> in dialog footer (getNoteTemplate)
 function openDialog() {
     contentDialog.showModal();
     contentDialog.classList.add("dialog_opend");
@@ -59,9 +63,12 @@ function openDialog() {
 }
 
 // create content for HTML in <dialog> of selected Image
-function getNoteTamplate(currentImgIndex) {
-    contentHeader.innerHTML = `<h2 class="headline_two">${imgTitle[currentImgIndex]}</h2>`;
-    contentSection.innerHTML = `<img class="dialog_img" src="${imgArray[currentImgIndex]}" alt="${imgAlt[currentImgIndex]}">`;
+// add <h2> and <img> of dialog with content (getNoteTemplate)
+// add content of <p> in dialog footer (getNoteTemplate)
+function getNoteTamplate(index) {
+    contentHeader.innerHTML = `<h2 class="headline_two">${imgTitle[index]}</h2>`;
+    contentSection.innerHTML = `<img class="dialog_img" src="${imgArray[index]}" alt="${imgAlt[index]}">`;
+    contentNumber.innerHTML = (index + 1) + "/12";
 }
 
 // closeDialog
@@ -69,8 +76,8 @@ function getNoteTamplate(currentImgIndex) {
 // remove class dialog opend
 // add class dialog closed
 // empty content of <dialog>
+// setTimeout = Timeout of 750ms after push close button
 function closeDialog() {
-    // contentDialog.close();
     contentDialog.classList.remove("dialog_opend");
     contentDialog.classList.add("dialog_closed");
 
@@ -98,7 +105,7 @@ function createNextImg() {
     getNoteTamplate(index);
 }
 
-// switch to prevvious img and create these with associated img titel
+// switch to previous img and create these with associated img titel
 function createPreviousImg() {
     index--;
 
@@ -108,7 +115,6 @@ function createPreviousImg() {
     getNoteTamplate(index);
 }
 
-
 // next steps:
-// overwrite number if switch to next or previous image 
+// close methode: Dialog closes when anywhere in the window is clicked.
 
