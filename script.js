@@ -98,9 +98,17 @@ function createNextImg() {
     getNoteTamplate(index);
 }
 
+// switch to prevvious img and create these with associated img titel
+function createPreviousImg() {
+    index--;
+
+    if (index < 0) {
+        index = 11;
+    }
+    getNoteTamplate(index);
+}
+
 
 // next steps:
-// include filter button (left or right)!!!
-// intigrate for loop to open random img and all element are correct!
-// ...
+// overwrite number if switch to next or previous image 
 
