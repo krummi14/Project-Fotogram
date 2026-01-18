@@ -50,12 +50,14 @@ let contentNumber = document.getElementById("img_numbering");
 let index = 0;
 
 // openDialog function:
-// open dialog by click on img (element one) at position null
+// open dialog by click on img 
+// stop event bubbling with click on img (dialog will be open and doesn't close immediately afterwards)
 // add class dialog_opend
 // remove class dialog_closed
 // add <h2> and <img> of dialog with content (getNoteTemplate)
 // add content of <p> in dialog footer (getNoteTemplate)
-function openDialog() {
+function openDialog(event) {
+    if (event) event.stopPropagation();
     contentDialog.showModal();
     contentDialog.classList.add("dialog_opend");
     contentDialog.classList.remove("dialog_closed");
@@ -80,6 +82,7 @@ function getNoteTamplate(index) {
 function closeDialog() {
     contentDialog.classList.remove("dialog_opend");
     contentDialog.classList.add("dialog_closed");
+
 
     // close dialog after finish of animation (750ms)
     setTimeout(function () {
@@ -115,6 +118,8 @@ function createPreviousImg() {
     getNoteTamplate(index);
 }
 
-// next steps:
-// close methode: Dialog closes when anywhere in the window is clicked.
-
+// stop event bubbling at <div> (dialog content)
+// onclick by img dialog stays open
+function closeDialogOnBodyclick(event) {
+    event.stopPropagation()
+}
