@@ -41,12 +41,14 @@ let imgAlt = ['beach of vietnam',
 // variable of content in dialog header
 // variable of img content in dialog section
 // variable of all dialog content
+// variable of image numbering
 // variable index for filter current index
-// variable of image numbering 
+// variable of h1 headline 
 let contentHeader = document.getElementById('img_titel');
 let contentSection = document.getElementById('dialog_img');
 let contentDialog = document.getElementById('dialog_content');
 let contentNumber = document.getElementById("img_numbering");
+let contentHeadline = document.getElementById("content_headline");
 let index = 0;
 
 // openDialog function:
@@ -68,7 +70,7 @@ function openDialog(event) {
 // add <h2> and <img> of dialog with content (getNoteTemplate)
 // add content of <p> in dialog footer (getNoteTemplate)
 function getNoteTamplate(index) {
-    contentHeader.innerHTML = `<h2 class="headline_two">${imgTitle[index]}</h2>`;
+    contentHeader.innerHTML = `<h2 id="dialog_titel" class="headline_two">${imgTitle[index]}</h2>`;
     contentSection.innerHTML = `<img class="dialog_img" src="${imgArray[index]}" alt="${imgAlt[index]}">`;
     contentNumber.innerHTML = (index + 1) + "/12";
 }
@@ -87,6 +89,7 @@ function closeDialog() {
     // close dialog after finish of animation (750ms)
     setTimeout(function () {
         contentDialog.close();
+        contentHeadline.focus();
         contentHeader.innerHTML = "";
         contentSection.innerHTML = "";
     }, 750);
@@ -123,3 +126,13 @@ function createPreviousImg() {
 function closeDialogOnBodyclick(event) {
     event.stopPropagation()
 }
+
+// switch to next or previous image with ArrowLeft or ArrowRight key
+function useKey(event) {
+    if (event.key == 'ArrowLeft') {
+        createPreviousImg()
+    }
+    if (event.key == 'ArrowRight') {
+        createNextImg()
+    }
+} 

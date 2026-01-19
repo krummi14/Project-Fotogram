@@ -9,93 +9,95 @@
     <link rel="icon" href="./img/logo.svg">
 </head>
 
-<body>
+<body onkeydown="useKey(event)">
 
     <header>
         <span class="header_maxWidth">
             <img class="header_logo" src="./img/logo.svg" alt="Logo of Fotograms">
         </span>
     </header>
-    <div>
-        <main>
-            <section class="fotogram_content">
-                <h1 class="headline_one">My personal photo album</h1>
-                <div id="gallery">
-                    <div class="padding_gallery">
-                        <button class="img_button" onclick="filterCurrentIndex(0)">
-                            <img class="img_size" src="./img/beach-1790701_1280.jpg" alt="beach of vietnam">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(1)">
-                            <img class="img_size" src="./img/boy-6559419_1280.jpg" alt="vietnamese boy">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(2)">
-                            <img class="img_size" src="./img/hoi-an-7501885_1280.jpg" alt="vietnam hoi an">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(3)">
-                            <img class="img_size" src="./img/landscape-5104510_1280.jpg" alt="landscape of vietnam">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(4)">
-                            <img class="img_size" src="./img/market-2494520_1280.jpg" alt="vietnam market">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(5)">
-                            <img class="img_size" src="./img/mountains-4484190_1280.jpg"
-                                alt="landscape with mountains in vietnam">
-                        </button>
-                        <button class="img_button display_none_respo" onclick="filterCurrentIndex(6)">
-                            <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
-                        </button>
-                    </div>
-                    <span class="center_gallery">
-                        <button class="img_button display_none" onclick="filterCurrentIndex(6)">
-                            <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(7)">
-                            <img class="img_size" src="./img/river-8105970_1280.jpg" alt="vietnam river">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(8)">
-                            <img class="img_size" src="./img/pine-7171768_1280.jpg" alt="vietnam forest">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(9)">
-                            <img class="img_size" src="./img/sea-4168234_1280.jpg" alt="sea of vietnam">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(10)">
-                            <img class="img_size" src="./img/street-vendor-4176310_1280.jpg" alt="streets of vietnam">
-                        </button>
-                        <button class="img_button" onclick="filterCurrentIndex(11)">
-                            <img class="img_size" src="./img/tea-9800900_1280.jpg" alt="vietnam tea plantation">
-                        </button>
-                    </span>
-                </div>
-            </section>
 
-            <section>
-                <dialog onclick="closeDialog()" class="dialog_img_titel_content" id="dialog_content">
-                    <div class="dialog_content_center" onclick="closeDialogOnBodyclick(event)">
-                        <header class="dialog_header">
-                            <div id="img_titel"></div>
-                            <div class="close_button_right">
-                                <button class="close_button_dialog" onclick="closeDialog()">x</button>
-                            </div>
-                        </header>
-                        <section class="img_section">
-                            <div id="dialog_img"></div>
-                        </section>
-                        <footer class="dialog_footer">
-                            <span class="dialog_footer_content">
-                                <button onclick="createPreviousImg()" class="button_next_img button_mirror">
-                                    <img src="./img/Arrow-Right.svg" alt="switch to next img">
-                                </button>
-                                <p id="img_numbering"></p>
-                                <button onclick="createNextImg()" class="button_next_img"><img
-                                        src="./img/Arrow-Right.svg" alt="switch to next img">
-                                </button>
-                            </span>
-                        </footer>
-                    </div>
-                </dialog>
-            </section>
-        </main>
-    </div>
+    <main>
+        <section class="fotogram_content">
+            <h1 id="content_headline" class="headline_one" tabindex="-1">My personal photo album</h1>
+            <div id="gallery" class="gallery_content">
+                <nav class="padding_gallery">
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(0)">
+                        <img class="img_size" src="./img/beach-1790701_1280.jpg" alt="beach of vietnam">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(1)">
+                        <img class="img_size" src="./img/boy-6559419_1280.jpg" alt="vietnamese boy">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(2)">
+                        <img class="img_size" src="./img/hoi-an-7501885_1280.jpg" alt="vietnam hoi an">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(3)">
+                        <img class="img_size" src="./img/landscape-5104510_1280.jpg" alt="landscape of vietnam">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(4)">
+                        <img class="img_size" src="./img/market-2494520_1280.jpg" alt="vietnam market">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(5)">
+                        <img class="img_size" src="./img/mountains-4484190_1280.jpg"
+                            alt="landscape with mountains in vietnam">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button display_none_respo" onclick="filterCurrentIndex(6)">
+                        <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
+                    </button>
+                </nav>
+                <nav class="center_gallery">
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button display_none" onclick="filterCurrentIndex(6)">
+                        <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(7)">
+                        <img class="img_size" src="./img/river-8105970_1280.jpg" alt="vietnam river">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(8)">
+                        <img class="img_size" src="./img/pine-7171768_1280.jpg" alt="vietnam forest">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(9)">
+                        <img class="img_size" src="./img/sea-4168234_1280.jpg" alt="sea of vietnam">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(10)">
+                        <img class="img_size" src="./img/street-vendor-4176310_1280.jpg" alt="streets of vietnam">
+                    </button>
+                    <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(11)">
+                        <img class="img_size" src="./img/tea-9800900_1280.jpg" alt="vietnam tea plantation">
+                    </button>
+                </nav>
+            </div>
+        </section>
+
+        <section>
+            <dialog onclick="closeDialog()" aria-labelledby="dialog_titel" class="dialog_img_titel_content" id="dialog_content">
+                <div class="dialog_content_center" onclick="closeDialogOnBodyclick(event)">
+                    <header class="dialog_header">
+                        <figcaption id="img_titel"></figcaption>
+                        <div class="close_button_right">
+                            <button class="close_button_dialog" onclick="closeDialog()" aria-label="dialog close">x</button>
+                        </div>
+                    </header>
+                    <figure class="img_section">
+                        <div id="dialog_img"></div>
+                    </figure>
+
+                    <footer class="dialog_footer">
+                        <span class="dialog_footer_content">
+                            <button onclick="createPreviousImg()" class="button_next_img button_mirror">
+                                <img src="./img/Arrow-Right.svg" alt="switch to next img">
+                            </button>
+                            <figcaption id="img_numbering" class="img_description"></figcaption>
+                            <button onclick="createNextImg()" class="button_next_img"><img src="./img/Arrow-Right.svg"
+                                    alt="switch to next img">
+                            </button>
+                        </span>
+                    </footer>
+                    </aside>
+                </div>
+            </dialog>
+        </section>
+    </main>
+
     <footer class="footer_brd_radius footer_heigth">
         <div class="footer_maxWidth">
             <img class="footer_logo" src="./img/da_logo.svg" alt="Logo of Developer Akademie">
