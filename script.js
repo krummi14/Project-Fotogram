@@ -42,10 +42,12 @@ let contentSection = document.getElementById('dialog_img');
 let contentDialog = document.getElementById('dialog_content');
 let contentNumber = document.getElementById("img_numbering");
 let contentHeadline = document.getElementById("content_headline");
+let contentMain = document.getElementById("main_content");
 let index = 0;
 
 function openDialog(event) {
     if (event) event.stopPropagation();
+    contentMain.classList.add("no_scroll");
     contentDialog.showModal();
     contentDialog.classList.add("dialog_opend");
     contentDialog.classList.remove("dialog_closed");
@@ -61,6 +63,7 @@ function getNoteTamplate(index) {
 function closeDialog() {
     contentDialog.classList.remove("dialog_opend");
     contentDialog.classList.add("dialog_closed");
+    contentMain.classList.remove("no_scroll");
 
     setTimeout(function () {
         contentDialog.close();
