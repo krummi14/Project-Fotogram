@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotogram Webseite</title>
+    <title>Fotogram – My Vietnam Photo Album</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./img/logo.svg">
 </head>
 
 <body onkeydown="useKey(event)">
-
     <header>
         <span class="header_maxWidth">
             <img class="header_logo" src="./img/logo.svg" alt="Logo of Fotograms">
@@ -21,7 +20,7 @@
         <section class="fotogram_content">
             <h1 id="content_headline" class="headline_one" tabindex="-1">My personal photo album</h1>
             <div id="gallery" class="gallery_content">
-                <nav class="padding_gallery">
+                <span class="padding_gallery">
                     <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(0)">
                         <img class="img_size" src="./img/beach-1790701_1280.jpg" alt="beach of vietnam">
                     </button>
@@ -44,8 +43,8 @@
                     <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button display_none_respo" onclick="filterCurrentIndex(6)">
                         <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
                     </button>
-                </nav>
-                <nav class="center_gallery">
+                </span>
+                <span class="center_gallery">
                     <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button display_none" onclick="filterCurrentIndex(6)">
                         <img class="img_size" src="./img/pham-ngu-lao-3989110_1280.jpg" alt="vietnam pham-ngu lao">
                     </button>
@@ -64,12 +63,12 @@
                     <button aria-haspopup="dialog" aria-controls="dialog_content" class="img_button" onclick="filterCurrentIndex(11)">
                         <img class="img_size" src="./img/tea-9800900_1280.jpg" alt="vietnam tea plantation">
                     </button>
-                </nav>
+                </span>
             </div>
         </section>
 
         <section>
-            <dialog onclick="closeDialog()" aria-labelledby="dialog_titel" class="dialog_img_titel_content" id="dialog_content">
+            <dialog onclick="closeDialog()" aria-labelledby="img_titel" class="dialog_img_titel_content" id="dialog_content">
                 <div class="dialog_content_center" onclick="closeDialogOnBodyclick(event)">
                     <header class="dialog_header">
                         <figcaption id="img_titel"></figcaption>
@@ -83,11 +82,11 @@
 
                     <footer class="dialog_footer">
                         <span class="dialog_footer_content">
-                            <button onclick="createPreviousImg()" class="button_next_img button_mirror">
-                                <img src="./img/Arrow-Right.svg" alt="switch to next img">
+                            <button onclick="changeImage(0)" class="button_next_img button_mirror">
+                                <img src="./img/Arrow-Right.svg" alt="switch to previous img">
                             </button>
                             <figcaption id="img_numbering" class="img_description"></figcaption>
-                            <button onclick="createNextImg()" class="button_next_img"><img src="./img/Arrow-Right.svg"
+                            <button onclick="changeImage(1)" class="button_next_img"><img src="./img/Arrow-Right.svg"
                                     alt="switch to next img">
                             </button>
                         </span>
@@ -106,7 +105,4 @@
 
     <script src="script.js"></script>
 </body>
-
-
-
 </html>

@@ -1,4 +1,3 @@
-// array of img files, array of img titles and array of alternative img name
 let imgArray = ['./img/beach-1790701_1280.jpg',
     './img/boy-6559419_1280.jpg',
     './img/hoi-an-7501885_1280.jpg',
@@ -38,12 +37,6 @@ let imgAlt = ['beach of vietnam',
     'streets of vietnam',
     'vietnam tea plantation'];
 
-// variable of content in dialog header
-// variable of img content in dialog section
-// variable of all dialog content
-// variable of image numbering
-// variable index for filter current index
-// variable of h1 headline 
 let contentHeader = document.getElementById('img_titel');
 let contentSection = document.getElementById('dialog_img');
 let contentDialog = document.getElementById('dialog_content');
@@ -51,13 +44,6 @@ let contentNumber = document.getElementById("img_numbering");
 let contentHeadline = document.getElementById("content_headline");
 let index = 0;
 
-// openDialog function:
-// open dialog by click on img 
-// stop event bubbling with click on img (dialog will be open and doesn't close immediately afterwards)
-// add class dialog_opend
-// remove class dialog_closed
-// add <h2> and <img> of dialog with content (getNoteTemplate)
-// add content of <p> in dialog footer (getNoteTemplate)
 function openDialog(event) {
     if (event) event.stopPropagation();
     contentDialog.showModal();
@@ -66,73 +52,57 @@ function openDialog(event) {
     getNoteTamplate(index);
 }
 
-// create content for HTML in <dialog> of selected Image
-// add <h2> and <img> of dialog with content (getNoteTemplate)
-// add content of <p> in dialog footer (getNoteTemplate)
 function getNoteTamplate(index) {
     contentHeader.innerHTML = `<h2 id="dialog_titel" class="headline_two">${imgTitle[index]}</h2>`;
     contentSection.innerHTML = `<img class="dialog_img" src="${imgArray[index]}" alt="${imgAlt[index]}">`;
     contentNumber.innerHTML = (index + 1) + "/12";
 }
 
-// closeDialog
-// close dialog by click on "x"
-// remove class dialog opend
-// add class dialog closed
-// empty content of <dialog>
-// setTimeout = Timeout of 750ms after push close button
 function closeDialog() {
     contentDialog.classList.remove("dialog_opend");
     contentDialog.classList.add("dialog_closed");
 
-
-    // close dialog after finish of animation (750ms)
     setTimeout(function () {
         contentDialog.close();
         contentHeadline.focus();
         contentHeader.innerHTML = "";
         contentSection.innerHTML = "";
-    }, 750);
+    }, 125);
 }
 
-// identify currently index of function openDialog()
 function filterCurrentIndex(i) {
     index = i;
     openDialog();
 }
 
-// switch to next img and create these with associated img titel
-function createNextImg() {
-    index++;
+function changeImage(ImageParameter) {
+    if (ImageParameter == 1) {
+        index++;
 
-    if (index >= imgArray.length) {
-        index = 0;
+        if (index >= imgArray.length) {
+            index = 0;
+        }
+    }
+
+    if (ImageParameter == 0) {
+        index--;
+
+        if (index < 0) {
+            index = 11;
+        }
     }
     getNoteTamplate(index);
 }
 
-// switch to previous img and create these with associated img titel
-function createPreviousImg() {
-    index--;
-
-    if (index < 0) {
-        index = 11;
-    }
-    getNoteTamplate(index);
-}
-
-// stop event bubbling at <div> (dialog content)
-// onclick by img dialog stays open
 function closeDialogOnBodyclick(event) {
     event.stopPropagation()
 }
 
-// switch to next or previous image with ArrowLeft or ArrowRight key
 function useKey(event) {
     if (event.key == 'ArrowLeft') {
-        createPreviousImg()
+        changeImage(0);
     }
     if (event.key == 'ArrowRight') {
-        createNextImg()
+        changeImage(1);
     }
 } 

@@ -162,18 +162,18 @@ main {
     left: 50%;
     padding: 0;
     transform: translate(-50%, -50%) translateX(100px);
-    transition: all 750ms ease-in;
+    transition: all 125ms ease-in;
 }
 
 .dialog_img_titel_content.dialog_opend {
     transform: translate(-50%, -50%) translateX(0);
-    transition: all 750ms ease-in;
+    transition: all 125ms ease-in;
 }
 
 .dialog_img_titel_content::backdrop {
     background-color: rgba(9, 33, 42, 1);
     opacity: 0;
-    transition: all 750ms ease-in;
+    transition: all 125ms ease-in;
 }
 
 .dialog_img_titel_content.dialog_opend::backdrop {
@@ -182,7 +182,7 @@ main {
 
 .dialog_img_titel_content.dialog_closed {
     transform: translate(-50%, -50%) translateX(100px);
-    transition: all 750ms ease-in;
+    transition: all 125ms ease-in;
 }
 
 .dialog_img_titel_content.dialog_closed::backdrop {
@@ -298,7 +298,7 @@ main {
 
 }
 
-@media(min-width: 375px) and (max-width: 830px) {
+@media(min-width: 320px) and (max-width: 830px) {
 
     header {
         justify-content: center;
@@ -327,6 +327,11 @@ main {
     .gallery_content {
         flex-direction: row;
         align-items: start;
+    }
+
+    .img_size {
+        height: 140px;
+        width: 140px;
     }
 
     .display_none {
@@ -382,11 +387,11 @@ main {
     }
 
     .dialog_img {
-        width: 300px;
-        height: 375px;
+        width: 240px;
+        height: 320px;
     }
 
     .dialog_footer_content {
-        width: 240px;
+        width: 200px;
     }
 }
